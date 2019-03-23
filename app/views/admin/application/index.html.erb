@@ -24,18 +24,20 @@ It renders the `_table` partial to display details about the resources.
 <% end %>
 
 <header class="main-content__header" role="banner">
+  <%= image_tag 'menu_open.png', id: 'navigation__toggle', style: 'height: 30px;margin-right:10px;' %>
+  <script>
+    document.getElementById('navigation__toggle').onclick = function() {
+      var navigation = document.getElementsByClassName('navigation')[0];
+      if (navigation.style.display === 'none') {
+        navigation.style.display = 'block';
+        this.src = "<%= image_path 'menu_open.png' %>";
+      } else {
+        navigation.style.display = 'none';
+        this.src = "<%= image_path 'menu_closed.png' %>";
+      }
+    };
+  </script>
   <h1 class="main-content__page-title" id="page-title">
-    <%= image_tag 'right_arrow.svg', id: 'navigation__toggle' %>
-    <script>
-      document.getElementById('navigation__toggle').onclick = function() {
-        var navigation = document.getElementsByClassName('navigation')[0];
-        if (navigation.style.display === 'none') {
-          navigation.style.display = 'block';
-        } else {
-          navigation.style.display = 'none';
-        }
-      };
-    </script>
     <%= content_for(:title) %>
   </h1>
 
