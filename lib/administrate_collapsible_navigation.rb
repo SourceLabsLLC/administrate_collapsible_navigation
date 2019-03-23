@@ -12,7 +12,7 @@ module AdministrateCollapsibleNavigation
     )
 
     Administrate::Engine.add_stylesheet(
-      'administrate_collapsible_navigation/application',
+      'administrate_collapsible_navigation/application'
     )
   end
 end
