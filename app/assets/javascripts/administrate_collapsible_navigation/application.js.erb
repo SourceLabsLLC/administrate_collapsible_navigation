@@ -1,0 +1,10 @@
+document.getElementById('navigation__toggle').onclick = function() {
+  var navigation = document.getElementsByClassName('navigation')[0];
+  if (navigation.style.display === 'none') {
+    navigation.style.display = 'block';
+    this.src = "<%= image_path 'menu_open.png' %>";
+  } else {
+    navigation.style.display = 'none';
+    this.src = "<%= image_path 'menu_closed.png' %>";
+  }
+};
